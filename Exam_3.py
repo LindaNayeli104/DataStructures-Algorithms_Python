@@ -32,17 +32,20 @@ class LinkedList(object):
         Return "None" if position is not in the list."""
         if position == 1 :
             return self.head
-        if self.head:
-            pos = 2
-            current = self.head.next
-            while (pos != position):
-                if current.next == None:
-                    return None
-                current = current.next
-                pos += 1
-            return current
-        else:
+        elif position < 1:
             return None
+        else:
+            if self.head:
+                pos = 2
+                current = self.head.next
+                while (pos != position):
+                    if current.next == None:
+                        return None
+                    current = current.next
+                    pos += 1
+                return current
+            else:
+                return None
 
         
 
